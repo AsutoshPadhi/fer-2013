@@ -1,0 +1,47 @@
+                     Challenges in Representation Learning:
+                    Facial Expression Recognition Challenge
+
+
+DESCRIPTIONS
+
+
+Dataset
+    Fer2013 Dataset is used, which has 28,709 training images, 3,589 public
+    test images, and 3,589 final test images. Each image has shape 1*48*48.
+    There are 7 classes (0-6).
+
+    Format of fer2013.csv, 1 heading + 35,887 lines in total.
+        Emotion, Pixels, Usage
+        Label, Image, Training/PublicTest/PrivateTest
+
+    I. Goodfellow, et al. Challenges in representation learning: A report on
+    three machine learning contests. Neural Networks, 2015.
+
+
+PREREQUIREMENTS
+    Python 3.6
+
+
+LAYOUT
+    ./data/             # Datasets
+    ./src/              # Source codes
+
+
+USAGE
+    Step 1. Data preparation.
+    # Split training and testing images.
+    $ cd ./src/raw/
+    $ head -n 1 fer2013.csv > train_all.csv
+    $ head -n 1 fer2013.csv > val_all.csv
+    $ head -n 1 fer2013.csv > test_all.csv
+    $ cat fer2013.csv | grep Training >> train_all.csv
+    $ cat fer2013.csv | grep PublicTest >> val_all.csv
+    $ cat fer2013.csv | grep PrivateTest >> test_all.csv
+
+
+AUTHOR
+    Hao Zhang (zhangh0214@gmail.com)
+
+
+LICENSE
+    CC BY-SA 3.0
